@@ -65,7 +65,6 @@ kannada_stones_episam_binarized/
 kannada_stones_extracted/
 kannada_stones_shilora_preprocessed/
 shilora_output/
-preprocessing/
 
 # Trained models
 *.pth
