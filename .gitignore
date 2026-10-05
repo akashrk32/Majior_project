@@ -1,0 +1,76 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Trained models
+*.pth
+*.pt
+*.ckpt
+*.keras
+*.h5
+*.safetensors
+*.onnx
+*.bin
+
+# Model directories
+models/
+model/
+checkpoints/
+model_checkpoints/
+weights/
+Brahmi_Model_Export/
+brahmi_model_resnet50_new/
+brahmi_model_efficientnetb0_new/
+brahmi_model_mobilenet_v2/
+
+# Datasets
+dataset/
+datasets/
+data/
+pdf_dataset/
+
+# Python/cache/output
+.cache/
+tmp/
+temp/
+logs/
+outputs/
+results/
+runs/
+
+# Node
+node_modules/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+# Large datasets / generated images
+extracted_sample_test/
+kannada_stones/
+kannada_stones_episam_binarized/
+kannada_stones_extracted/
+kannada_stones_shilora_preprocessed/
+shilora_output/
+preprocessing/
+
+# Trained models
+*.pth
+*.pt
+*.keras
+*.h5
+*.onnx
+*.safetensors
