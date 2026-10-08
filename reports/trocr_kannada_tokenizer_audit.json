@@ -1,0 +1,977 @@
+{
+  "audit_name": "SHILORA TrOCR Kannada Tokenizer Forensic Audit",
+  "timestamp": "2026-10-07T10:30:00Z",
+  "original_vocab_size": 64002,
+  "tokens_added": 134,
+  "repaired_vocab_size": 64126,
+  "archaic_ra_token_id": [
+    64049
+  ],
+  "archaic_lla_token_id": [
+    64089
+  ],
+  "total_audit_samples": 81,
+  "total_preserved": 81,
+  "round_trip_preservation_rate": "100.00%",
+  "metadata_test_lines_evaluated": 95,
+  "metadata_test_lines_with_unk": 0,
+  "metadata_test_unk_rate": "0.00%",
+  "overall_status": "PASSED",
+  "test_categories": {
+    "standard_consonants": [
+      {
+        "original_text": "ಕ",
+        "token_ids": [
+          64025
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಕ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಖ",
+        "token_ids": [
+          64026
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಖ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಗ",
+        "token_ids": [
+          63627
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಗ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಘ",
+        "token_ids": [
+          64027
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಘ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಙ",
+        "token_ids": [
+          64028
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಙ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಚ",
+        "token_ids": [
+          64029
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಚ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಛ",
+        "token_ids": [
+          64030
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಛ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಜ",
+        "token_ids": [
+          64031
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಜ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಝ",
+        "token_ids": [
+          64032
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಝ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಞ",
+        "token_ids": [
+          64033
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಞ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಟ",
+        "token_ids": [
+          64034
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಟ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಠ",
+        "token_ids": [
+          64035
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಠ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಡ",
+        "token_ids": [
+          64036
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಡ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಢ",
+        "token_ids": [
+          64037
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಢ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಣ",
+        "token_ids": [
+          64038
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಣ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ತ",
+        "token_ids": [
+          64039
+        ],
+        "unk_count": 0,
+        "decoded_text": "ತ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಥ",
+        "token_ids": [
+          64040
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಥ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ದ",
+        "token_ids": [
+          63680
+        ],
+        "unk_count": 0,
+        "decoded_text": "ದ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಧ",
+        "token_ids": [
+          64041
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಧ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ನ",
+        "token_ids": [
+          63681
+        ],
+        "unk_count": 0,
+        "decoded_text": "ನ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಪ",
+        "token_ids": [
+          64043
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಪ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಫ",
+        "token_ids": [
+          64044
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಫ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಬ",
+        "token_ids": [
+          64045
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಬ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಭ",
+        "token_ids": [
+          64046
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಭ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಮ",
+        "token_ids": [
+          64047
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಮ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಯ",
+        "token_ids": [
+          64048
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಯ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ರ",
+        "token_ids": [
+          63544
+        ],
+        "unk_count": 0,
+        "decoded_text": "ರ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಲ",
+        "token_ids": [
+          64050
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಲ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ವ",
+        "token_ids": [
+          63746
+        ],
+        "unk_count": 0,
+        "decoded_text": "ವ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಶ",
+        "token_ids": [
+          64053
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಶ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಷ",
+        "token_ids": [
+          64054
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಷ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಸ",
+        "token_ids": [
+          64055
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಸ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಹ",
+        "token_ids": [
+          64056
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಹ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಳ",
+        "token_ids": [
+          64051
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಳ",
+        "exact_match": true,
+        "passed": true
+      }
+    ],
+    "historical_archaic_characters": [
+      {
+        "original_text": "ಱ",
+        "token_ids": [
+          64049
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಱ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೞ",
+        "token_ids": [
+          64089
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೞ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "಼",
+        "token_ids": [
+          64059
+        ],
+        "unk_count": 0,
+        "decoded_text": "಼",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಽ",
+        "token_ids": [
+          64060
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಽ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೠ",
+        "token_ids": [
+          64091
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೠ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೡ",
+        "token_ids": [
+          64092
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೡ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೲ",
+        "token_ids": [
+          64109
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೲ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೱ",
+        "token_ids": [
+          64108
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೱ",
+        "exact_match": true,
+        "passed": true
+      }
+    ],
+    "kannada_numerals": [
+      {
+        "original_text": "೦",
+        "token_ids": [
+          64097
+        ],
+        "unk_count": 0,
+        "decoded_text": "೦",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೧",
+        "token_ids": [
+          64098
+        ],
+        "unk_count": 0,
+        "decoded_text": "೧",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೨",
+        "token_ids": [
+          64099
+        ],
+        "unk_count": 0,
+        "decoded_text": "೨",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೩",
+        "token_ids": [
+          64100
+        ],
+        "unk_count": 0,
+        "decoded_text": "೩",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೪",
+        "token_ids": [
+          64101
+        ],
+        "unk_count": 0,
+        "decoded_text": "೪",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೫",
+        "token_ids": [
+          64102
+        ],
+        "unk_count": 0,
+        "decoded_text": "೫",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೬",
+        "token_ids": [
+          64103
+        ],
+        "unk_count": 0,
+        "decoded_text": "೬",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೭",
+        "token_ids": [
+          64104
+        ],
+        "unk_count": 0,
+        "decoded_text": "೭",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೮",
+        "token_ids": [
+          64105
+        ],
+        "unk_count": 0,
+        "decoded_text": "೮",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "೯",
+        "token_ids": [
+          64106
+        ],
+        "unk_count": 0,
+        "decoded_text": "೯",
+        "exact_match": true,
+        "passed": true
+      }
+    ],
+    "vowel_signs_and_combining_marks": [
+      {
+        "original_text": "ಾ",
+        "token_ids": [
+          64061
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಾ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಿ",
+        "token_ids": [
+          63710
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಿ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೀ",
+        "token_ids": [
+          64062
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೀ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ು",
+        "token_ids": [
+          63539
+        ],
+        "unk_count": 0,
+        "decoded_text": "ು",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೂ",
+        "token_ids": [
+          64063
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೂ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೃ",
+        "token_ids": [
+          64064
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೃ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೄ",
+        "token_ids": [
+          64065
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೄ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೆ",
+        "token_ids": [
+          63711
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೆ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೇ",
+        "token_ids": [
+          64067
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೇ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೈ",
+        "token_ids": [
+          64068
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೈ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೊ",
+        "token_ids": [
+          64070
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೊ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೋ",
+        "token_ids": [
+          64071
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೋ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ೌ",
+        "token_ids": [
+          64072
+        ],
+        "unk_count": 0,
+        "decoded_text": "ೌ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "್",
+        "token_ids": [
+          63470
+        ],
+        "unk_count": 0,
+        "decoded_text": "್",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಂ",
+        "token_ids": [
+          64006
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಂ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಃ",
+        "token_ids": [
+          64007
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಃ",
+        "exact_match": true,
+        "passed": true
+      }
+    ],
+    "compound_aksharas_and_ligatures": [
+      {
+        "original_text": "ಶ್ರೀ",
+        "token_ids": [
+          64053,
+          63470,
+          63544,
+          64062
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಶ್ರೀ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಸ್ವಸ್ತಿ",
+        "token_ids": [
+          64055,
+          63470,
+          63746,
+          64055,
+          63470,
+          64039,
+          63710
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಸ್ವಸ್ತಿ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಕ್ಷ",
+        "token_ids": [
+          64025,
+          63470,
+          64054
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಕ್ಷ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಜ್ಞ",
+        "token_ids": [
+          64031,
+          63470,
+          64033
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಜ್ಞ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ತ್ರ್ಯ",
+        "token_ids": [
+          64039,
+          63470,
+          63544,
+          63470,
+          64048
+        ],
+        "unk_count": 0,
+        "decoded_text": "ತ್ರ್ಯ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ರ್ದ್ಧ",
+        "token_ids": [
+          63544,
+          63470,
+          63680,
+          63470,
+          64041
+        ],
+        "unk_count": 0,
+        "decoded_text": "ರ್ದ್ಧ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ರ್ಮ್ಮ",
+        "token_ids": [
+          63544,
+          63470,
+          64047,
+          63470,
+          64047
+        ],
+        "unk_count": 0,
+        "decoded_text": "ರ್ಮ್ಮ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ರ್ವ್ವ",
+        "token_ids": [
+          63544,
+          63470,
+          63746,
+          63470,
+          63746
+        ],
+        "unk_count": 0,
+        "decoded_text": "ರ್ವ್ವ",
+        "exact_match": true,
+        "passed": true
+      }
+    ],
+    "epigraphical_phrases": [
+      {
+        "original_text": "ಸ್ವಸ್ತಿ ಶ್ರೀ ಪೃಥ್ವೀರಾಜ್ಯಂಗೆಯ್ಯುತ್ತಮಿರೆ",
+        "token_ids": [
+          64055,
+          63470,
+          63746,
+          64055,
+          63470,
+          64039,
+          63710,
+          64002,
+          64053,
+          63470,
+          63544,
+          64062,
+          64002,
+          64043,
+          64064,
+          64040,
+          63470,
+          63746,
+          64062,
+          63544,
+          64061,
+          64031,
+          63470,
+          64048,
+          64006,
+          63627,
+          63711,
+          64048,
+          63470,
+          64048,
+          63539,
+          64039,
+          63470,
+          64039,
+          64047,
+          63710,
+          63544,
+          63711
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಸ್ವಸ್ತಿ ಶ್ರೀ ಪೃಥ್ವೀರಾಜ್ಯಂಗೆಯ್ಯುತ್ತಮಿರೆ",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಕಾಳಗದೊಳ್ ಬಿದ್ದನ್",
+        "token_ids": [
+          64025,
+          64061,
+          64051,
+          63627,
+          63680,
+          64070,
+          64051,
+          63470,
+          64002,
+          64045,
+          63710,
+          63680,
+          63470,
+          63680,
+          63681,
+          63470
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಕಾಳಗದೊಳ್ ಬಿದ್ದನ್",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಸಾಸಿರ್ವ್ವರ್ ಬ್ರಾಹ್ಮಣರ್",
+        "token_ids": [
+          64055,
+          64061,
+          64055,
+          63710,
+          63544,
+          63470,
+          63746,
+          63470,
+          63746,
+          63544,
+          63470,
+          64002,
+          64045,
+          63470,
+          63544,
+          64061,
+          64056,
+          63470,
+          64047,
+          64038,
+          63544,
+          63470
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಸಾಸಿರ್ವ್ವರ್ ಬ್ರಾಹ್ಮಣರ್",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ವಿಕ್ರಮಾದಿತ್ಯ ದೇವರ್",
+        "token_ids": [
+          63746,
+          63710,
+          64025,
+          63470,
+          63544,
+          64047,
+          64061,
+          63680,
+          63710,
+          64039,
+          63470,
+          64048,
+          64002,
+          63680,
+          64067,
+          63746,
+          63544,
+          63470
+        ],
+        "unk_count": 0,
+        "decoded_text": "ವಿಕ್ರಮಾದಿತ್ಯ ದೇವರ್",
+        "exact_match": true,
+        "passed": true
+      },
+      {
+        "original_text": "ಧರ್ಮಕ್ಕೆ ಸಾಕ್ಷಿ",
+        "token_ids": [
+          64041,
+          63544,
+          63470,
+          64047,
+          64025,
+          63470,
+          64025,
+          63711,
+          64002,
+          64055,
+          64061,
+          64025,
+          63470,
+          64054,
+          63710
+        ],
+        "unk_count": 0,
+        "decoded_text": "ಧರ್ಮಕ್ಕೆ ಸಾಕ್ಷಿ",
+        "exact_match": true,
+        "passed": true
+      }
+    ]
+  }
+}

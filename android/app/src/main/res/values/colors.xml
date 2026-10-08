@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- BRAND COLOR SYSTEM (60 : 30 : 10) - STRICTLY LOCKED -->
+
+    <!-- 60% Major surfaces, identity, primary backgrounds -->
+    <color name="shilora_sage_green">#9CAF88</color>
+
+    <!-- 30% Cards, secondary panels, supporting surfaces -->
+    <color name="shilora_concrete_grey">#A7A7A7</color>
+
+    <!-- 10% Primary CTA, scan button, active highlights, badges -->
+    <color name="shilora_burnt_amber">#CC5500</color>
+
+    <!-- Accessibility neutrals for readable typography -->
+    <color name="shilora_text_primary">#1A1C19</color>
+    <color name="shilora_white">#FFFFFF</color>
+</resources>

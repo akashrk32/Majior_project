@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Shilora" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/shilora_sage_green</item>
+        <item name="android:navigationBarColor">@color/shilora_sage_green</item>
+    </style>
+</resources>

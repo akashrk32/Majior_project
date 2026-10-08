@@ -55,7 +55,8 @@ class EpiSAMBinarizer:
 
     def predict_full_image_patchwise(self, image_tensor, patch_size, overlap, batch_size=4):
         """
-        Batched sliding-window patchwise prediction for high CPU throughput.
+        Batched sliding-window patchwise prediction with Hann-window overlap-aware
+        reconstruction to eliminate patch seams and preserve continuous glyph strokes.
         """
         self.model.eval()
         c, h, w = image_tensor.shape
@@ -66,6 +67,10 @@ class EpiSAMBinarizer:
         _, _, H, W = image_padded.shape
         prediction_canvas = torch.zeros((1, 1, H, W), device=self.device)
         count_canvas = torch.zeros((1, 1, H, W), device=self.device)
+
+        # 2D Hann window for smooth overlap blending across patch seams
+        hann_1d = torch.hann_window(patch_size, periodic=False, device=self.device)
+        hann_2d = torch.clamp((hann_1d.unsqueeze(1) * hann_1d.unsqueeze(0)).unsqueeze(0).unsqueeze(0), min=0.08)
 
         patch_coords = []
         for y in range(0, H - overlap, stride):
@@ -84,8 +89,8 @@ class EpiSAMBinarizer:
                 pred_orig = F.interpolate(pred_batch, size=(patch_size, patch_size), mode='bilinear', align_corners=False)
 
             for b_idx, (y, x) in enumerate(batch_indices):
-                prediction_canvas[:, :, y:y+patch_size, x:x+patch_size] += pred_orig[b_idx:b_idx+1]
-                count_canvas[:, :, y:y+patch_size, x:x+patch_size] += 1
+                prediction_canvas[:, :, y:y+patch_size, x:x+patch_size] += pred_orig[b_idx:b_idx+1] * hann_2d
+                count_canvas[:, :, y:y+patch_size, x:x+patch_size] += hann_2d
 
         prediction_canvas /= (count_canvas + 1e-8)
         return prediction_canvas[:, :, :h, :w].squeeze().cpu().numpy()
@@ -127,9 +132,9 @@ class EpiSAMBinarizer:
         _, h, w = image_tensor.shape
 
         if fast_single_scale:
-            scales = [min(512, max(h, w))]
+            scales = [256]
         else:
-            scales = [min(s, max(h, w)) for s in [256, 512]]
+            scales = [256, 384]
 
         prediction_masks = []
         for patch_size in scales:
@@ -142,16 +147,25 @@ class EpiSAMBinarizer:
             )
             prediction_masks.append(pred_mask)
 
-        # Fuse predictions using max
+        # Fuse predictions using max across scales
         fused = np.maximum.reduce(prediction_masks) if len(prediction_masks) > 1 else prediction_masks[0]
-        th = 0.40 if (threshold is None or threshold <= 0) else threshold
+        th = 0.20 if (threshold is None or threshold <= 0) else threshold
         pseudo_gt_bin = (fused > th).astype(np.uint8) * 255
 
-        # Resize back to original resolution if needed
+        # Minimal conservative cleanup: remove only isolated dust/speckles (< 8 pixels)
+        # Never erode, thin, or destroy matras/conjuncts
+        num_labels, labels_im, stats, _ = cv2.connectedComponentsWithStats(pseudo_gt_bin, connectivity=8)
+        clean_mask = np.zeros_like(pseudo_gt_bin)
+        for i in range(1, num_labels):
+            if stats[i, cv2.CC_STAT_AREA] >= 8:
+                clean_mask[labels_im == i] = 255
+
         if scale != 1.0:
-            final_mask = cv2.resize(pseudo_gt_bin, (w_orig, h_orig), interpolation=cv2.INTER_NEAREST)
+            final_mask = cv2.resize(clean_mask, (w_orig, h_orig), interpolation=cv2.INTER_NEAREST)
+            fused_orig = cv2.resize(fused, (w_orig, h_orig), interpolation=cv2.INTER_LINEAR)
         else:
-            final_mask = pseudo_gt_bin
+            final_mask = clean_mask
+            fused_orig = fused
 
         # Format for OCR: Black characters on pure white background
         if invert_output_for_ocr:
@@ -161,4 +175,5 @@ class EpiSAMBinarizer:
             clean_bgr = np.zeros((h_orig, w_orig, 3), dtype=np.uint8)
             clean_bgr[final_mask == 255] = [255, 255, 255]
 
-        return final_mask, clean_bgr
+        return final_mask, clean_bgr, fused_orig
+

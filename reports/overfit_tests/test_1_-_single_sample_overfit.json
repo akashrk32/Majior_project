@@ -1,0 +1,15 @@
+{
+  "test_name": "TEST 1 - Single Sample Overfit",
+  "num_samples": 1,
+  "epochs": 60,
+  "final_loss": 0.3181345760822296,
+  "cer": 0.09523809523809523,
+  "exact_line_accuracy": 0.0,
+  "passed": true,
+  "predictions": [
+    {
+      "ref": "ರಾಜ್ಯಂಗೆಯೆತತ್ಪ್ರಸಾದದೆ",
+      "pred": "ರಾಜ್ಯಂಗೆಯೆತತತ್ಪ್ರಸಾದದದೆ"
+    }
+  ]
+}

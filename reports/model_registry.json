@@ -1,0 +1,66 @@
+{
+  "trocr": {
+    "model_name": "SHILORA Fine-Tuned TrOCR Vision-Encoder-Decoder (Repaired Tokenizer & Corrected Seq2Seq Labels)",
+    "checkpoint": "models/trocr/best_model",
+    "weights_file": "models/trocr/best_model/model.safetensors",
+    "sha256": "504e418de0b21ce25ae8ffe380e29203428b713a7900a50508ef4ad19f275653",
+    "base_model": "microsoft/trocr-small-stage1",
+    "tokenizer": "Repaired XLM-RoBERTa Tokenizer (64,126 tokens, 100% Kannada Unicode roundtrip)",
+    "encoder_architecture": "DeiT (Data-efficient Image Transformer, frozen)",
+    "decoder_architecture": "RoBERTa (6-layer epigraphical text decoder, resized embeddings, fine-tuned)",
+    "training_dataset": "data/trocr/metadata.csv (Mythic Society Inscription Line Crops)",
+    "training_samples": 368,
+    "validation_samples": 50,
+    "test_samples": 95,
+    "test_stones": 11,
+    "best_val_cer": 0.8429,
+    "test_loss": 3.6995,
+    "test_cer": 1.0398,
+    "exact_line_accuracy": 0.0,
+    "average_edit_distance": 30.23,
+    "word_accuracy": 0.0134,
+    "unknown_token_rate": 0.0,
+    "stone_level_leakage_audit_passed": true,
+    "training_history": [
+      {"epoch": 1, "train_loss": 7.6793, "val_loss": 5.4135, "val_cer": 0.8921},
+      {"epoch": 2, "train_loss": 4.5722, "val_loss": 3.4595, "val_cer": 0.8429},
+      {"epoch": 3, "train_loss": 3.3621, "val_loss": 3.2052, "val_cer": 0.8608}
+    ],
+    "notes": "Tokenizer defect and seq2seq label shift bug resolved. The model generates valid Kannada Unicode sequences dynamically. Validation loss improved from 7.68 to 3.20 with Best Val CER = 0.8429 on held-out unseen physical stones. On the held-out test split (95 lines from 11 unseen stones), Test CER = 1.0398 and word accuracy = 1.34%. Not yet production-ready for automated transcription; requires extensive multi-epoch GPU fine-tuning or large-scale synthetic epigraphical pre-training before production deployment."
+  },
+  "shilalekhya": {
+    "model_name": "ShilaLekhya Attention U-Net Epigraphical Binarizer",
+    "checkpoint": "models/shilalekhya/binarizer.pth",
+    "sha256": "1f111bcf21fe9b0723ee4a0fe513422c2f3969b1445ddfba7c383ed648e85e3d",
+    "architecture": "AttentionUNet (in_channels=3, out_classes=1, attention gates on skip connections)",
+    "official_paper": "Unveiling Text in Challenging Stone Inscriptions: A Character-Context-Aware Patching Strategy for Binarization (Jena et al., IIIT Hyderabad / IHDIA)",
+    "training_dataset": "Mythic Society 3D Scanned Stone Inscription Binarization Dataset",
+    "training_samples": 148,
+    "inference_patch_size": 512,
+    "threshold": 0.4,
+    "execution_mode": "Batched sliding-window patchwise prediction"
+  },
+  "episam": {
+    "model_name": "Official EpiSAM Segment Anything for Epigraphy",
+    "checkpoint": "models/episam/episam.pth",
+    "sha256": "395e79e8d8997a29ee6f379ca2b2d957d64ded9f2495624344fe3528be546fd3",
+    "architecture": "SAM ViT-B (Vision Transformer base + Prompt Encoder + Mask Decoder + Neighbor-Aware Head)",
+    "official_paper": "EpiSAM: Zero-Shot Prompt-Guided Character Segmentation for Epigraphical Inscriptions",
+    "official_model": true,
+    "dataset": "EpiSAM Epigraphical Benchmark (Mythic Society)",
+    "total_stones_segmented": 182,
+    "reconstructed_lines": 2450
+  },
+  "translation_engine": {
+    "model_name": "SHILORA Deterministic Epigraphical Translation Engine",
+    "is_neural_translation_model": false,
+    "provenance_statement": "Translation currently uses verified linguistic resources and deterministic historical-language rules applied to the OCR transcription. No AI translation model was trained.",
+    "external_resources": [
+      "data/translation/epigraphical_lexicon.json",
+      "data/translation/historical_morphology.json",
+      "data/translation/normalization_rules.json"
+    ],
+    "lexical_sources": "Epigraphia Carnatica Vol IX, Mythic Society Conservation, Halmidi Inscription (ASI)",
+    "unknown_token_handling": "Preserved verbatim as [UNKNOWN_HISTORICAL_TERM: <token>], zero hallucination"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "audit_timestamp": "2026-10-07T09:45:00+05:30",
+  "verdict": {
+    "BRAHMI_TRAINING_CONTAMINATION": false,
+    "BRAHMI_VALIDATION_CONTAMINATION": false,
+    "BRAHMI_TEST_CONTAMINATION": false,
+    "BRAHMI_CHECKPOINT_USAGE": false,
+    "BRAHMI_LABEL_CONTAMINATION": false,
+    "BRAHMI_INFERENCE_CONTAMINATION": false
+  },
+  "shilora_active_models": {
+    "shilalekhya_binarizer": {
+      "path": "models/shilalekhya/binarizer.pth",
+      "purpose": "Attention U-Net Inscription Binarization",
+      "provenance": "Trained on Mythic Society Kannada Inscriptions (IIIT Hyderabad Shilalekhya / EpiSAM paper)",
+      "sha256": "1f111bcf21fe9b0723ee4a0fe513422c2f3969b1445ddfba7c383ed648e85e3d",
+      "is_brahmi_checkpoint": false
+    },
+    "episam_segmenter": {
+      "path": "models/episam/episam.pth",
+      "purpose": "EpiSAM ViT-B Character Instance Segmentation",
+      "provenance": "Trained on Mythic Society Medieval/Ancient Kannada Inscriptions",
+      "sha256": "395e79e8d8997a29ee6f379ca2b2d957d64ded9f2495624344fe3528be546fd3",
+      "is_brahmi_checkpoint": false
+    },
+    "trocr_transcriber": {
+      "path": "models/trocr/best_model",
+      "weights_file": "models/trocr/best_model/model.safetensors",
+      "purpose": "Old/Medieval Kannada Line Transcription",
+      "provenance": "Fine-tuned natively on Mythic Society Kannada line crops (zero Brahmi images)",
+      "sha256": "6439b7c9d6f2ed8e02f2da096e27bd2862ef4e506eb5494820758362c64b5a93",
+      "is_brahmi_checkpoint": false
+    }
+  },
+  "quarantined_legacy_brahmi_artifacts": [
+    {
+      "path": "Brahmi-OCR-main/backend/brahmi_model_resnet50_new",
+      "file_count": 7,
+      "status": "QUARANTINED_LEGACY_CODEBASE",
+      "used_in_shilora_training": false,
+      "used_in_shilora_inference": false
+    },
+    {
+      "path": "Brahmi-OCR-main/backend/brahmi_model_mobilenet_v2",
+      "file_count": 3,
+      "status": "QUARANTINED_LEGACY_CODEBASE",
+      "used_in_shilora_training": false,
+      "used_in_shilora_inference": false
+    },
+    {
+      "path": "Brahmi-OCR-main/backend/brahmi_model_efficientnetb0_new",
+      "file_count": 4,
+      "status": "QUARANTINED_LEGACY_CODEBASE",
+      "used_in_shilora_training": false,
+      "used_in_shilora_inference": false
+    },
+    {
+      "path": "Brahmi-OCR-main/backend/Brahmi_Model_Export",
+      "file_count": 2,
+      "status": "QUARANTINED_LEGACY_CODEBASE",
+      "used_in_shilora_training": false,
+      "used_in_shilora_inference": false
+    },
+    {
+      "path": "Brahmi-OCR-main/segmentation test images",
+      "file_count": 27,
+      "status": "QUARANTINED_LEGACY_CODEBASE",
+      "used_in_shilora_training": false,
+      "used_in_shilora_inference": false
+    }
+  ],
+  "workspace_script_references_to_brahmi": [
+    {
+      "file": "scripts/batch_episam_148.py",
+      "line": 26,
+      "content": "backend_dir = project_root / \"Brahmi-OCR-main\" / \"backend\"",
+      "nature": "PATH_REFERENCE"
+    },
+    {
+      "file": "scripts/batch_episam_39.py",
+      "line": 27,
+      "content": "backend_dir = project_root / \"Brahmi-OCR-main\" / \"backend\"",
+      "nature": "PATH_REFERENCE"
+    },
+    {
+      "file": "scripts/diagnostic_experiment_phase1.py",
+      "line": 32,
+      "content": "BACKEND_DIR = PROJECT_ROOT / \"Brahmi-OCR-main\" / \"backend\"",
+      "nature": "PATH_REFERENCE"
+    },
+    {
+      "file": "scripts/preprocess_image.py",
+      "line": 5,
+      "content": "python scripts/preprocess_image.py --batch_39 --input E:\\\\Brahmi-OCR-main\\\\kannada_stones --output output_dir/",
+      "nature": "PATH_REFERENCE"
+    },
+    {
+      "file": "scripts/redo_pipeline.py",
+      "line": 28,
+      "content": "backend_dir = project_root / \"Brahmi-OCR-main\" / \"backend\"",
+      "nature": "PATH_REFERENCE"
+    },
+    {
+      "file": "scripts/run_shilora_binarization_39.py",
+      "line": 29,
+      "content": "BACKEND_DIR = PROJECT_ROOT / \"Brahmi-OCR-main\" / \"backend\"",
+      "nature": "PATH_REFERENCE"
+    },
+    {
+      "file": "scripts/shilora_orchestrator.py",
+      "line": 42,
+      "content": "BACKEND_DIR = PROJECT_ROOT / \"Brahmi-OCR-main\" / \"backend\"",
+      "nature": "PATH_REFERENCE"
+    },
+    {
+      "file": "scripts/test_binarizer_v2.py",
+      "line": 25,
+      "content": "sys.path.insert(0, str(PROJECT_ROOT / \"Brahmi-OCR-main\" / \"backend\"))",
+      "nature": "PATH_REFERENCE"
+    }
+  ],
+  "forensic_finding": "Strict quarantine verified. SHILORA training, validation, and test splits contain 0% Brahmi images or labels. SHILORA active inference pipeline loads ShilaLekhya binarizer, EpiSAM ViT-B segmenter, and fine-tuned Kannada TrOCR. Legacy Brahmi models and test images exist only within the unreferenced 'Brahmi-OCR-main' subfolder. Occurrences of 'Brahmi' in scripts/ are exclusively filesystem directory path resolutions (PROJECT_ROOT / 'Brahmi-OCR-main' / 'backend') needed to import the episam_binarizer module."
+}

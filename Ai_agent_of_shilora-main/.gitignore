@@ -1,0 +1,83 @@
+# =========================
+# SECRETS
+# =========================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+service-account.json
+secrets.json
+
+# =========================
+# PYTHON
+# =========================
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# =========================
+# NODE
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# =========================
+# VS CODE
+# =========================
+.vscode/
+
+# =========================
+# TRAINED MODELS
+# =========================
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.keras
+*.bin
+
+models/
+model/
+checkpoints/
+model_checkpoints/
+weights/
+
+# =========================
+# DATASETS
+# =========================
+datasets/
+dataset/
+data/
+pdf_dataset/
+*.csv
+*.zip
+*.tar
+*.tar.gz
+
+# =========================
+# LOGS / OUTPUTS
+# =========================
+*.log
+logs/
+outputs/
+runs/
+results/
+.cache/
+tmp/
+temp/
+
+# =========================
+# OS
+# =========================
+Thumbs.db
+.DS_Store

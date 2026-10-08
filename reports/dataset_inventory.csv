@@ -1,0 +1,5 @@
+dataset_source,number_of_original_images,number_of_binarized_images,number_of_character_masks,number_of_line_masks,number_of_annotated_images,number_of_shilora_images,duplicates,missing_pairs
+SHILORA 39 Stones (Local),39,39,0,0,0,39,39,0
+EpiSAM / Mythic Society (kannada_stones/),148,80,148,148,148,0,0,68
+Brahmi-OCR Legacy Test Set,27,0,0,0,0,0,0,0
+TOTAL COMBINED KANNADA INSCRIPTIONS,187,119,148,148,148,39,39,68

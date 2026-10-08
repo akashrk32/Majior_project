@@ -1,0 +1,639 @@
+{
+  "archaic_characters": [
+    {
+      "input": "ಱ",
+      "description": "U+0CB1 (KANNADA LETTER RRA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CB1"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೞ",
+      "description": "U+0CDE (KANNADA LETTER ARCHAIC LLA/ZHA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CDE"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "಼",
+      "description": "U+0CBC (KANNADA SIGN NUKTA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CBC"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ಽ",
+      "description": "U+0CBD (KANNADA SIGN AVAGRAHA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CBD"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೠ",
+      "description": "U+0CE0 (KANNADA LETTER VOCALIC RR)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CE0"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೡ",
+      "description": "U+0CE1 (KANNADA LETTER VOCALIC LL)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CE1"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೱ",
+      "description": "U+0CF1 (KANNADA ARCHAIC UPADHMANIYA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CF1"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೲ",
+      "description": "U+0CF2 (KANNADA ARCHAIC JIHVAMULIYA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CF2"
+      ],
+      "decoded_codepoints": []
+    }
+  ],
+  "combining_marks_and_virama": [
+    {
+      "input": "್",
+      "description": "U+0CCD (KANNADA SIGN VIRAMA)",
+      "token_ids": [
+        190,
+        63470
+      ],
+      "decoded": "್",
+      "exact_match": true,
+      "input_codepoints": [
+        "U+0CCD"
+      ],
+      "decoded_codepoints": [
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ಂ",
+      "description": "U+0C82 (KANNADA SIGN ANUSVARA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0C82"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ಃ",
+      "description": "U+0C83 (KANNADA SIGN VISARGA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0C83"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ಾ",
+      "description": "U+0CBE (VOWEL SIGN AA)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CBE"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ಿ",
+      "description": "U+0CBF (VOWEL SIGN I)",
+      "token_ids": [
+        190,
+        63710
+      ],
+      "decoded": "ಿ",
+      "exact_match": true,
+      "input_codepoints": [
+        "U+0CBF"
+      ],
+      "decoded_codepoints": [
+        "U+0CBF"
+      ]
+    },
+    {
+      "input": "ೀ",
+      "description": "U+0CC0 (VOWEL SIGN II)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CC0"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ು",
+      "description": "U+0CC1 (VOWEL SIGN U)",
+      "token_ids": [
+        190,
+        63539
+      ],
+      "decoded": "ು",
+      "exact_match": true,
+      "input_codepoints": [
+        "U+0CC1"
+      ],
+      "decoded_codepoints": [
+        "U+0CC1"
+      ]
+    },
+    {
+      "input": "ೂ",
+      "description": "U+0CC2 (VOWEL SIGN UU)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CC2"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೃ",
+      "description": "U+0CC3 (VOWEL SIGN VOCALIC R)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CC3"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೆ",
+      "description": "U+0CC6 (VOWEL SIGN E)",
+      "token_ids": [
+        190,
+        63711
+      ],
+      "decoded": "ೆ",
+      "exact_match": true,
+      "input_codepoints": [
+        "U+0CC6"
+      ],
+      "decoded_codepoints": [
+        "U+0CC6"
+      ]
+    },
+    {
+      "input": "ೇ",
+      "description": "U+0CC7 (VOWEL SIGN EE)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CC7"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೈ",
+      "description": "U+0CC8 (VOWEL SIGN AI)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CC8"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೊ",
+      "description": "U+0CCA (VOWEL SIGN O)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CCA"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೋ",
+      "description": "U+0CCB (VOWEL SIGN OO)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CCB"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ೌ",
+      "description": "U+0CCC (VOWEL SIGN AU)",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CCC"
+      ],
+      "decoded_codepoints": []
+    }
+  ],
+  "consonants_and_conjuncts": [
+    {
+      "input": "ಕ",
+      "description": "KA",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0C95"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "ಕ್ಕ",
+      "description": "KKA (geminate)",
+      "token_ids": [
+        190,
+        3,
+        63470,
+        3
+      ],
+      "decoded": "್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0C95",
+        "U+0CCD",
+        "U+0C95"
+      ],
+      "decoded_codepoints": [
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ಕ್ಷ",
+      "description": "KSHA",
+      "token_ids": [
+        190,
+        3,
+        63470,
+        3
+      ],
+      "decoded": "್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0C95",
+        "U+0CCD",
+        "U+0CB7"
+      ],
+      "decoded_codepoints": [
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ಜ್ಞ",
+      "description": "JNYA",
+      "token_ids": [
+        190,
+        3,
+        63470,
+        3
+      ],
+      "decoded": "್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0C9C",
+        "U+0CCD",
+        "U+0C9E"
+      ],
+      "decoded_codepoints": [
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ರ್ಮ್ಮ",
+      "description": "RM-MA (repha geminate)",
+      "token_ids": [
+        190,
+        63544,
+        63470,
+        3,
+        63470,
+        3
+      ],
+      "decoded": "ರ್್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CB0",
+        "U+0CCD",
+        "U+0CAE",
+        "U+0CCD",
+        "U+0CAE"
+      ],
+      "decoded_codepoints": [
+        "U+0CB0",
+        "U+0CCD",
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ಕಾಳಗದೊಳ್",
+      "description": "Kaalagadol (In battle)",
+      "token_ids": [
+        190,
+        3,
+        63627,
+        63680,
+        3,
+        63470
+      ],
+      "decoded": "ಗದ್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0C95",
+        "U+0CBE",
+        "U+0CB3",
+        "U+0C97",
+        "U+0CA6",
+        "U+0CCA",
+        "U+0CB3",
+        "U+0CCD"
+      ],
+      "decoded_codepoints": [
+        "U+0C97",
+        "U+0CA6",
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ಪೃಥ್ವೀರಾಜ್ಯಂ",
+      "description": "Prithvirajyam",
+      "token_ids": [
+        190,
+        3,
+        63470,
+        63746,
+        3,
+        63544,
+        3,
+        63470,
+        3
+      ],
+      "decoded": "್ವರ್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CAA",
+        "U+0CC3",
+        "U+0CA5",
+        "U+0CCD",
+        "U+0CB5",
+        "U+0CC0",
+        "U+0CB0",
+        "U+0CBE",
+        "U+0C9C",
+        "U+0CCD",
+        "U+0CAF",
+        "U+0C82"
+      ],
+      "decoded_codepoints": [
+        "U+0CCD",
+        "U+0CB5",
+        "U+0CB0",
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ಬಿದ್ದನ್",
+      "description": "Biddan (Fell)",
+      "token_ids": [
+        190,
+        3,
+        63710,
+        63680,
+        63470,
+        63680,
+        63681,
+        63470
+      ],
+      "decoded": "ಿದ್ದನ್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CAC",
+        "U+0CBF",
+        "U+0CA6",
+        "U+0CCD",
+        "U+0CA6",
+        "U+0CA8",
+        "U+0CCD"
+      ],
+      "decoded_codepoints": [
+        "U+0CBF",
+        "U+0CA6",
+        "U+0CCD",
+        "U+0CA6",
+        "U+0CA8",
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ಎಱೆಯಪ್ಪ",
+      "description": "Ereyappa (With archaic RRA)",
+      "token_ids": [
+        190,
+        3,
+        63711,
+        3,
+        63470,
+        3
+      ],
+      "decoded": "ೆ್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0C8E",
+        "U+0CB1",
+        "U+0CC6",
+        "U+0CAF",
+        "U+0CAA",
+        "U+0CCD",
+        "U+0CAA"
+      ],
+      "decoded_codepoints": [
+        "U+0CC6",
+        "U+0CCD"
+      ]
+    },
+    {
+      "input": "ಬೆಗೂಱ್",
+      "description": "Begoor (With archaic RRA + Virama)",
+      "token_ids": [
+        190,
+        3,
+        63711,
+        63627,
+        3,
+        63470
+      ],
+      "decoded": "ೆಗ್",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CAC",
+        "U+0CC6",
+        "U+0C97",
+        "U+0CC2",
+        "U+0CB1",
+        "U+0CCD"
+      ],
+      "decoded_codepoints": [
+        "U+0CC6",
+        "U+0C97",
+        "U+0CCD"
+      ]
+    }
+  ],
+  "kannada_numerals": [
+    {
+      "input": "೦೧೨೩೪೫೬೭೮೯",
+      "description": "Kannada digits 0-9",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CE6",
+        "U+0CE7",
+        "U+0CE8",
+        "U+0CE9",
+        "U+0CEA",
+        "U+0CEB",
+        "U+0CEC",
+        "U+0CED",
+        "U+0CEE",
+        "U+0CEF"
+      ],
+      "decoded_codepoints": []
+    },
+    {
+      "input": "೧೪೬೨",
+      "description": "Year 1462 in Kannada numerals",
+      "token_ids": [
+        190,
+        3
+      ],
+      "decoded": "",
+      "exact_match": false,
+      "input_codepoints": [
+        "U+0CE7",
+        "U+0CEA",
+        "U+0CEC",
+        "U+0CE8"
+      ],
+      "decoded_codepoints": []
+    }
+  ],
+  "overall_summary": {
+    "all_passed": false,
+    "model": "models/trocr/best_model",
+    "tokenizer_class": "XLMRobertaTokenizer",
+    "vocab_size": 64002
+  }
+}

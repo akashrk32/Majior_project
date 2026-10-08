@@ -13,7 +13,7 @@ __pycache__/
 credentials.json
 secrets.json
 
-# Trained models
+# Trained models & heavy weights (>100MB blocked by GitHub)
 *.pth
 *.pt
 *.ckpt
@@ -23,31 +23,41 @@ secrets.json
 *.onnx
 *.bin
 
-# Model directories
-models/
-model/
-checkpoints/
-model_checkpoints/
-weights/
-Brahmi_Model_Export/
-brahmi_model_resnet50_new/
-brahmi_model_efficientnetb0_new/
-brahmi_model_mobilenet_v2/
+# Root Model directories
+/models/
+/model/
+/checkpoints/
+/model_checkpoints/
+/weights/
+/Brahmi_Model_Export/
+/brahmi_model_resnet50_new/
+/brahmi_model_efficientnetb0_new/
+/brahmi_model_mobilenet_v2/
+Brahmi-OCR-main/backend/Brahmi_Model_Export/
+Brahmi-OCR-main/backend/brahmi_model_efficientnetb0_new/
+Brahmi-OCR-main/backend/brahmi_model_mobilenet_v2/
+Brahmi-OCR-main/backend/brahmi_model_resnet50_new/
 
-# Datasets
-dataset/
-datasets/
-data/
-pdf_dataset/
+# Root Datasets (large image archives)
+/data/
+/dataset/
+/datasets/
+/pdf_dataset/
+/extracted_sample_test/
+/kannada_stones/
+/kannada_stones_episam_binarized/
+/kannada_stones_extracted/
+/kannada_stones_shilora_preprocessed/
+/shilora_output/
 
-# Python/cache/output
+# Python / cache / output
 .cache/
 tmp/
 temp/
 logs/
-outputs/
-results/
-runs/
+/outputs/
+/results/
+/runs/
 
 # Node
 node_modules/
@@ -58,18 +68,16 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
-# Large datasets / generated images
-extracted_sample_test/
-kannada_stones/
-kannada_stones_episam_binarized/
-kannada_stones_extracted/
-kannada_stones_shilora_preprocessed/
-shilora_output/
 
-# Trained models
-*.pth
-*.pt
-*.keras
-*.h5
-*.onnx
-*.safetensors
+# Android build outputs & local config (do NOT ignore Android source code!)
+.gradle/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.cxx/
+*.apk
+*.aab
+
+# Ensure Android source files are never ignored
+!android/app/src/**

@@ -927,18 +927,69 @@ def health():
     })
 
 
+# ============================================================================
+# ROUTE: /api/shilora/analyze
+# ============================================================================
+
+@app.route('/api/shilora/analyze', methods=['POST'])
+def api_shilora_analyze():
+    """
+    SHILORA End-to-End Production Pipeline Inference:
+    Image -> Relief Amplification -> Attention U-Net Binarization -> Quality Gate
+          -> EpiSAM Segmentation -> Line Reconstruction -> Fine-Tuned TrOCR -> Grounded Translation
+    """
+    try:
+        data = request.get_json(silent=True) or {}
+        image_b64 = data.get('image')
+        inscription_name = data.get('inscription_name') or request.form.get('inscription_name') or 'upload_stone'
+
+        parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        if parent_dir not in sys.path:
+            sys.path.insert(0, parent_dir)
+        from scripts.shilora_orchestrator import analyze_inscription
+
+        temp_dir = os.path.join(parent_dir, "outputs", "api_uploads")
+        os.makedirs(temp_dir, exist_ok=True)
+        temp_path = os.path.join(temp_dir, f"{inscription_name}.png")
+
+        if 'file' in request.files or 'image' in request.files:
+            file = request.files.get('file') or request.files.get('image')
+            file.save(temp_path)
+        elif image_b64:
+            if ',' in image_b64:
+                image_b64 = image_b64.split(',', 1)[1]
+            img_bytes = base64.b64decode(image_b64)
+            with open(temp_path, "wb") as f:
+                f.write(img_bytes)
+        else:
+            return jsonify({'success': False, 'pipeline_status': 'UNSUPPORTED_OR_UNREADABLE', 'error': 'No image provided'}), 400
+
+        result = analyze_inscription(temp_path, inscription_name=inscription_name)
+        result['success'] = (result.get('pipeline_status') == 'SUCCESS')
+        return jsonify(result)
+
+    except Exception as e:
+        print(f"[API ERROR] /api/shilora/analyze: {e}")
+        return jsonify({
+            'success': False,
+            'pipeline_status': 'PIPELINE_EXCEPTION',
+            'error': str(e)
+        }), 500
+
+
 @app.route('/', methods=['GET'])
 def index():
     return jsonify({
-        'service':   'Brahmi OCR & Inscription API',
-        'version':   '1.6',
+        'service':   'SHILORA Epigraphical AI & Brahmi OCR API',
+        'version':   '2.0',
         'model_accuracies': MODEL_ACCURACIES,
         'endpoints': {
-            '/health':             'GET  - Health check',
-            '/predict':            'POST - Predict characters from image',
-            '/process':            'POST - Segment + single-pass GAN restore',
-            '/segment':            'POST - Segment only, returns boxes for review',
-            '/episam_binarize':    'POST - Official EpiSAM / Shilalekhya Attention U-Net stone binarization'
+            '/health':                 'GET  - Health check',
+            '/api/shilora/analyze':    'POST - Full SHILORA End-to-End Pipeline Inference',
+            '/episam_binarize':        'POST - Official EpiSAM / Shilalekhya Attention U-Net stone binarization',
+            '/predict':                'POST - Legacy Brahmi prediction',
+            '/process':                'POST - Legacy Brahmi GAN restore',
+            '/segment':                'POST - Legacy character segmentation'
         }
     })
 

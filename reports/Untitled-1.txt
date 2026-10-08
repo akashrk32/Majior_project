@@ -1,0 +1,77 @@
+# EpiSAM: Character Segmentation in Challenging Stone Inscriptions
+
+<p align="center">
+  <a href="https://arxiv.org/pdf/2606.28859">
+    <img src="https://img.shields.io/badge/Paper-PDF-red?style=flat&logo=adobeacrobatreader&logoColor=white"></a>
+  <a href="https://ihdia.iiit.ac.in/episam/">
+    <img src="https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=green"></a>
+  <a href="https://huggingface.co/datasets/keyfinder08/EpiSAM_Inscriptions_Dataset">
+    <img src="https://img.shields.io/badge/Dataset-HuggingFace-blue?style=flat&logo=huggingface&logoColor=yellow"></a>
+  <a href="https://ihdia.iiit.ac.in/episam/dataset.html">
+    <img src="https://img.shields.io/badge/Dataset-Website-green?style=flat&logo=Google%20chrome&logoColor=white"></a>
+  <a href="https://huggingface.co/keyfinder08/EpiSAM_Inscriptions_Project"> <img src="https://img.shields.io/badge/Weights-HuggingFace-yellow?style=flat&logo=huggingface&logoColor=black"> </a>
+  <img src="https://komarev.com/ghpvc/?username=keyfinder08-episam&label=VISITORS&color=0e75b6&style=flat" alt="Visitor Count">
+</p>
+
+
+<h3 align="center"><b>Accepted at ICDAR 2026 (CORE A)</b></h3>
+
+This repository contains the codebase for dataset preprocessing, training, and evaluation of **EpiSAM** (Segment Anything Model fine-tuned for historical epigraphy and character segmentation).
+
+---
+
+## 📋 Table of Contents
+1. [Environment Setup](#1-environment-setup)
+2. [Dataset Directory Structure](#2-dataset-directory-structure)
+3. [Dataset Preprocessing](#3-dataset-preprocessing)
+4. [Training the Model](#4-training-the-model)
+5. [Evaluating the Model](#5-evaluating-the-model)
+6. [Line Grouping using 2-Hop Graph Classification](#6-line-grouping-using-2-hop-graph-classification)
+7. [Citation](#7-citation)
+8. [Acknowledgement](#8-acknowledgement)
+
+---
+
+## 1. Environment Setup
+
+You can set up the required Conda environment using the provided `environment.yml` file.
+
+```bash
+# 1. Create the conda environment from the environment file
+conda env create -f environment.yml
+
+# 2. Activate the newly created environment
+conda activate episam
+```
+
+---
+
+## 2. Dataset Directory Structure
+
+Ensure your dataset directory structure follows this format:
+
+```text
+episam_dataset/
+├── whole_images/
+│   ├── train/            # Whole input images for training split
+│   └── val/              # Whole input images for validation split
+├── binary_images/        # Preprocessed binarized images (optional, searched recursively)
+├── chars/
+│   ├── train/            # Character polygons & metadata per inscription (train split)
+│   └── val/              # Character polygons & metadata per inscription (val split)
+└── associated_centroids_updated/
+    ├── train/            # Associated centroids JSON files (train split)
+    └── val/              # Associated centroids JSON files (val split)
+```
+
+---
+
+## 3. Dataset Preprocessing
+
+Before training or evaluation, process the dataset to generate `.npz` mask arrays and master JSON index files. You must run the `prepare_dataset.py` script **twice**—once for the `train` split and once for the `val` split.
+
+### Step 3.1: Process Train Split
+
+```bash
+python dataset_scripts/prepare_dataset.py \
+  --associatio

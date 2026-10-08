@@ -1,0 +1,48 @@
+{
+  "provenance_metadata": {
+    "report_name": "SHILORA Image Preprocessing Provenance Audit",
+    "timestamp": "2026-10-07T11:00:00Z",
+    "total_inscriptions_cataloged": 187,
+    "shilora_target_collection_count": 39,
+    "mythsoc_episam_conserved_count": 148,
+    "future_production_rule": "ALL_USER_UPLOADS_MANDATORY_SHILORA_PREPROCESSING"
+  },
+  "historical_processing_paths": {
+    "group_a_shilora_stones": {
+      "count": 39,
+      "source": "SHILORA Inscription Field Survey & Targeted Epigraphical Archive",
+      "path": "data/raw/ & kannada_stones/ (stone_001.jpg - stone_039.jpg)",
+      "pipeline": "RAW STONE IMAGE -> ADAPTIVE SHILORA PREPROCESSING (Relief Amplification, Illumination Equalization, Bilateral Filtering, CLAHE) -> SHILALEKHYA ATTENTION U-NET BINARIZATION",
+      "deterministic_guarantee": "No generative synthesis or stroke fabrication. Natural photometric relief enhancement only.",
+      "output_dir": "data/preprocessed/"
+    },
+    "group_b_conserved_episam_stones": {
+      "count": 148,
+      "source": "Mythic Society 3D Inscriptions Conservation Project (Bangalore)",
+      "path": "kannada_stones/ (stone_kn_000001.jpg - stone_kn_000148.jpg)",
+      "pipeline": "HISTORICAL DIRECT BINARIZATION / PRE-PREPARED CONSERVATION DERIVATIVES -> SHILALEKHYA BINARIZATION & EPISAM GROUND TRUTH DERIVATION",
+      "note": "Historically conserved 3D photometric stereo scans prepared under direct epigraphical conservation protocol."
+    }
+  },
+  "future_frontend_production_specification": {
+    "mandatory_entrypoint": "scripts/shilora_orchestrator.py -> analyze_inscription()",
+    "flow": [
+      "1. User uploads arbitrary JPEG/PNG image via POST /api/shilora/analyze",
+      "2. Image written to secure temporary staging",
+      "3. ShiloraStonePreprocessor.process() performs adaptive relief amplification & local illumination normalization",
+      "4. Preprocessed image (final_natural) passed directly to EpiSAMBinarizer (models/shilalekhya/binarizer.pth)",
+      "5. Quality Gate inspects foreground density (0.005 <= fg_ratio <= 0.40) and connected component candidates (>= 3)",
+      "6. Validated mask passed to EpiSAM ViT-B (models/episam/episam.pth) for dynamic character segmentation",
+      "7. Spatial grouping & line reconstruction produces clean line crops",
+      "8. Fine-tuned TrOCR transcribe lines to raw Old Kannada text",
+      "9. Deterministic translation engine applies epigraphical lexicon & morphology"
+    ],
+    "anti_hardcoding_enforcement": {
+      "filename_based_preprocessing_selection": false,
+      "dataset_retrieval_or_lookup": false,
+      "canned_prediction_lookup": false,
+      "generative_stroke_fabrication": false,
+      "every_upload_executed_on_pixel_data": true
+    }
+  }
+}
